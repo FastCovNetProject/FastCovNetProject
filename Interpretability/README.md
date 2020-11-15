@@ -34,7 +34,7 @@ to capture pixels detected by neurons. The resulted visualization maos are high-
 In our experiment the model correctly detects the anatomic elements in the chest radiograph related to mediastinal structures(heart, pulmonary vessels and great vessels like aorta and cava vein), lung limits and extratoracic bone structures, however, it fails to be informative about with of the structures is more relevant for class activation. 
 
 ### Guided GradCAM
-#### Our problem needs a method that is both hight resolution and class discriminative: Guided GradCAM. 
+#### 4rd Hypotesis: Our problem needs a method that is both hight resolution and class discriminative: Guided GradCAM. 
 Combination of the two methods might provide us with the intended insight. The fusion of the outputs of Guided Backpropagation and Grad-CAM visualizations via
 element-wise multiplication might keep the benefits of both methods. 
 
