@@ -49,7 +49,16 @@ As explained in previous sections, we did the COVID classification using only RX
 
 ![ViewPositions](./ViewPositions.PNG)
 
-We thought that we could increase our dataset count size by creating a NN Classifier to classify them. Even though we got >95% accuracy, we finally didn't use these images because none of them were done using a "Philips DigitalDiagnost" RX machine. It's very likely that this machine forces the technician to inform this variable.
+Our Silver Dataset was not affected by these null images, since the only RX machine model we're including in this dataset had all ViewPosition fields informed. Unfortunately, this was not the case for the Gold Dataset, where Bellvitge also uses different RX brands that don't inform its ViewPosition. Since we could't afford to lose RX images from our Gold Dataset, we decided to use a NN to assign the ViewPosition.
+
+With more than 150k images to train, validate and test the network, we got >96% accuracy in only 15 epochs on not pretrained Densenet121. We inferred the ViewPosition to all images that didn't have this field informed and, thanks to that, we could increase our Gold Dataset from XXX to YYY images.
 
 ### Removal of blank/empty RX images
-During our dataset exploration, we found that some RX images had no patient in it, or were directly blank. Since these images could reduce the performance of our networks, we decided to try to find and remove them.
+During our dataset exploration, we found that some RX images were not done correctly and were "grey", with no patient in it. Since these images could reduce the performance of our networks, we decided to try remove them.
+
+We imagined that these grey images would have a small pixel array standard deviation. As expected, the images with the smallest values were the "grey" ones, and the ones that we finally removed from our datasets:
+
+![Std](./Std_low.PNG)
+
+### Removal of images wrongly labeled as "Chest" body position
+Another thing we noticed while exploring our dataset was that there were some 
