@@ -31,11 +31,13 @@ With this project we aim to solve the described problem using a deep learning ap
 For this project we have worked with public health system data. For accessing and using public health data we needed to present the project protocol to the Bellvitge University Hospital Research Ethics Commitee. Our protocol was aproved on July 9th with reference code 'Proyecto FastCovNET PR254/20'.
 
 *Silver Dataset*
+
 Following protocol approval a petition was sent to Padris Program for imaging data:
 - COVID19 group: Patients with a COVID19 positive PCR test and a Chest-XRay both between March21st and May21st 2020. 
 - No-COVID19 group: Previous (before 2020) chest X-rays from patients in COVID19 group, chest X-rays of patients with different lung conditions. 
 
 *Gold Dataset*
+
 Following protocol approval we began a retrospective data collection from the Bellvitge COVID19 'Fast Diagnosis Circuit'. 
 Gold dataset included 1000 individuals with following data:
 - PCR
