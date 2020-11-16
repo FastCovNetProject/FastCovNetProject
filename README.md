@@ -47,6 +47,29 @@ Gold dataset included 1000 individuals with following data:
 - Clinical parameters: cardiac rate, temperature and oxygen saturation. 
 - Codified final diagnosis.
 - Destination at discharge from the ER 
-Data was handled to Padris for annonimization, codification and association with imaging data. 
+Data was handled to Padris for anonymization, codification and association with imaging data. 
 
 
+------------------------
+
+#### References
+
+* [Li L, Qin L, Xu Z, Yin Y, Wang X, Kong B, et al. Artificial Intelligence Distinguishes
+COVID19 from Community Acquired Pneumonia on Chest CT. Radiology. May 2020.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7233473/pdf/radiol.2020200905.pdf)
+
+* [Mei X, Lee H-C, Diao K, Huang M, Lin B, Liu C, et al. Artificial intelligence–
+enabled rapid diagnosis of patients with COVID-19. Nature Medicine. May 2020; 1-5.](https://www.nature.com/articles/s41591-020-0931-3)
+
+* [Rajpurkar P, Irvin J, Zhu K, Yang B, Mehta H, Duan T, et al. CheXNet: Radiologist-
+Level Pneumonia Detection on Chest X-Rays with Deep Learning.](http://arxiv.org/abs/1711.05225)
+
+* [Zhang J, Xie Y, Li Y, Shen C, Xia Y. COVID-19 Screening on Chest X-ray Images
+Using Deep Learning based Anomaly Detection. March 2020](http://arxiv.org/abs/2003.12338)
+
+* [Asnaoui KE, Chawki Y. Using X-ray images and deep learning for automated
+detection of coronavirus disease. Journal of Biomolecular Structure and
+Dynamics. May 2020;0(0):1-12.](https://www.tandfonline.com/doi/full/10.1080/07391102.2020.1767212)
+
+* [Murphy K, Smits H, Knoops AJG, Korst MBJM, Samson T, Scholten ET, et al.
+COVID-19 on the Chest Radiograph: A Multi-Reader Evaluation of an AI System.
+Radiology. May 2020;201874.](https://pubs.rsna.org/doi/pdf/10.1148/radiol.2020201874)
