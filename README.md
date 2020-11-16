@@ -47,6 +47,7 @@ Gold dataset included 1000 individuals with following data:
 - Clinical parameters: cardiac rate, temperature and oxygen saturation. 
 - Codified final diagnosis.
 - Destination at discharge from the ER 
+
 Data was handled to Padris for anonymization, codification and association with imaging data. 
 
 
