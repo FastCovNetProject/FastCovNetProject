@@ -5,6 +5,7 @@ Tensorboard is a web server to serve visualizations of the training progress of 
 ## Installation
 We work on a JupyterLab, collaborative environment for python were Tensorboard for Pytorch have been installed.
 https://pytorch.org/docs/stable/tensorboard.html
+
 https://www.dlology.com/blog/how-to-run-tensorboard-for-pytorch-110-inside-jupyter-notebook/
 
 
