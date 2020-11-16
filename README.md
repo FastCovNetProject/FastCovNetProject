@@ -15,12 +15,12 @@ With this project we aim to solve the described problem using a deep learning ap
 #### Objectives
 
 1.	Obtain two curated datasets for training, testing and evaluation of the network:
-		- Silver dataset: SISCAT databases
-		- Golden dataset: Bellvitge Hospital COVID19 'Fast Diagnosis Circuit'
+	- Silver dataset: SISCAT databases
+	- Golden dataset: Bellvitge Hospital COVID19 'Fast Diagnosis Circuit'
 
-2.  Develop ChestCovNet: a CNN capable of processing X-ray images and classify them in COVID19 positive or negative. 
+2.	Develop ChestCovNet: a CNN capable of processing X-ray images and classify them in COVID19 positive or negative. 
 
-3.  Develop FastCovNet: Adapt the network for multimodal data (chest X-ray images and tabular data from clinical an laboratory features). 
+3.	Develop FastCovNet: Adapt the network for multimodal data (chest X-ray images and tabular data from clinical an laboratory features). 
 
 4.	Fine-tune FastCovNet for improving the performance over the unimodal version. 
 
@@ -28,6 +28,22 @@ With this project we aim to solve the described problem using a deep learning ap
 
 #### Data
 
+For this project we have worked with public health system data. For accessing and using public health data we needed to present the project protocol to the Bellvitge University Hospital Research Ethics Commitee. Our protocol was aproved on July 9th with reference code 'Proyecto FastCovNET PR254/20'.
+*Silver Dataset*
+Following protocol approval a petition was sent to Padris Program for imaging data:
+- COVID19 group: Patients with a COVID19 positive PCR test and a Chest-XRay both between March21st and May21st 2020. 
+- No-COVID19 group: Previous (before 2020) chest X-rays from patients in COVID19 group, chest X-rays of patients with different lung conditions. 
 
+*Gold Dataset*
+Following protocol approval we began a retrospective data collection from the Bellvitge COVID19 'Fast Diagnosis Circuit'. 
+Gold dataset included 1000 individuals with following data:
+- PCR
+- Chest Xray report
+- Age and sex
+- Blood test parameters: Inflammation biomarkers, coagulation biomarkers and kidney function biomarkers among others. 
+- Clinical parameters: cardiac rate, temperature and oxygen saturation. 
+- Codified final diagnosis.
+- Destination at discharge from the ER 
+Data was handled to Padris for annonimization, codification and association with imaging data. 
 
 
