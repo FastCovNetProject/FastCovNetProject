@@ -4,6 +4,7 @@ Tensorboard is a web server to serve visualizations of the training progress of 
 
 ## Installation
 We work on a JupyterLab, collaborative environment for python were Tensorboard for Pytorch have been installed.
+
 https://pytorch.org/docs/stable/tensorboard.html
 
 https://www.dlology.com/blog/how-to-run-tensorboard-for-pytorch-110-inside-jupyter-notebook/
@@ -14,10 +15,8 @@ As a visualization toolkit for machine learning experimentation, TensorBoard all
 
 Before logging anything, we need to create a writer instance. Writer will output to ./runs/ directory by default. Each subfolder will be treated as different experiments in tensorboard. Each time we re-run the experiment with different settings, we should change the name of the sub folder. Different types of data types can be log.
 
-
 ### Add scalar
 Scalar value is the most simple data type to deal with. Mostly we save the **LOSS** value of each training step, or the accuracy after each epoch. We can look at the predictions the model made on arbitrary batches throughout learning. See the “Images” tab and scroll down under the “predictions vs. actuals” visualization. In addition,  the corresponding learning rate can be save as well.
-
 
 ### Add image
 An image is represented as 3-dimensional tensor. The simplest case is save one image at a time. In this case, the image should be passed as a 3-dimension tensor of size [3, H, W]. The three dimensions correspond to R, G, B channel of an image
