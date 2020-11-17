@@ -1,0 +1,1 @@
+Results to our experiments, divided by network architecture. Precission and recall for both classes and loss evolution during training/validation have computed, as well as a histogram for visualizing the potential bias of the network by age.
