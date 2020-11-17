@@ -18,7 +18,7 @@ Our workstation has Ubuntu 20.04 LTS installed. In it, we installed JupyterHub, 
 
 ## Networking & Security
 For the legal concerns, datasets are kept in the workstation as anonymous as possible, so they can be used for research. 
-We've blocked our workstation for data extraction. In order to do so, we’ve set up a VM that is securely connected to the workstation and that has IP filtering and some policies that block data extraction. This is the VM that the members that don't work at AQuAS are using.
+We've blocked our workstation for data extraction. In order to do so, we’ve set up a VM that is securely connected to the workstation and that has IP filtering and some policies that block data extraction.
 
 <img src="./Images/Networking.PNG">
 
