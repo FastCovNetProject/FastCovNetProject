@@ -4,6 +4,8 @@ In this section, we present the FastCovNet architecture, the experiments and the
 
 The motivation for trying to develop this architecture is two-fold: on one hand, we think that it would be cool to do Deep Learning with a mixture of image data and tabular data, and on the other hand, we expect this architecture to improve the classification metrics. This approach is not unique, as we can see in [this](https://github.com/naity/image_tabular) and [this](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7150512/pdf/main.pdf) examples, but it is not too common either. We believe one of the main reasons for not being more widespread is the data scarcity, especially in healthcare settings.
 
+-------------------------------------
+
 ## The architecture
 
 Below we present a scheme of FastCovNet's architecture:
@@ -13,4 +15,11 @@ As it can be seen, it consists of two parts, an image processing part and a tabu
 
 As mentioned, one of the first hypothesis regarding the experiments with FastCovNet is that it will be able to outperform ChestCovNet. Prior evidence supporting this idea is the fact that an XGBoost classifier trained over the tabular data alone is able to predict the target variable with high accuracy (above 80%). Unfortunately, we have not been able to see this results in our experiments, as it is shown in the following section. In addition, basic hyperparameter search and fine-tuning has been carried on, due to limited remaining time of the project.
 
+-------------------------------------
+
 ## Experiments and results
+
+
+-------------------------------------
+
+## Conclusions
