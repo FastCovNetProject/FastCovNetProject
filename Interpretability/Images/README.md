@@ -1,2 +1,2 @@
 
-## This folder includes explainative illustration about interpretability techniches and images from experiments
+#### This folder includes explanatory illustration about interpretability techniques and images from experiments
