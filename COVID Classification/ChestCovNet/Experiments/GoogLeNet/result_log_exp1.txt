@@ -1,0 +1,14 @@
+#############################################################################
+Model: GoogLeNet 
+Training epochs: 23 
+Batch size: 40 
+Results: 
+              precision    recall  f1-score   support
+
+        Case     0.7977    0.7718    0.7845       618
+     Control     0.7857    0.8103    0.7978       638
+
+    accuracy                         0.7914      1256
+   macro avg     0.7917    0.7911    0.7912      1256
+weighted avg     0.7916    0.7914    0.7913      1256
+ 

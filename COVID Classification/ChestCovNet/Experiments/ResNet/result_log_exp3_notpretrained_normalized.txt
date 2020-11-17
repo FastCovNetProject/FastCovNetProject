@@ -1,0 +1,14 @@
+#############################################################################
+Model: ResNet 
+Training epochs: 35 
+Batch size: 40 
+Results: 
+              precision    recall  f1-score   support
+
+        Case     0.7445    0.7686    0.7564       618
+     Control     0.7686    0.7445    0.7564       638
+
+    accuracy                         0.7564      1256
+   macro avg     0.7566    0.7566    0.7564      1256
+weighted avg     0.7568    0.7564    0.7564      1256
+ 

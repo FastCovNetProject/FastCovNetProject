@@ -1,0 +1,14 @@
+#############################################################################
+Model: DenseNet 
+Training epochs: 39 
+Batch size: 40 
+Results: 
+              precision    recall  f1-score   support
+
+        Case     0.8083    0.8188    0.8135       618
+     Control     0.8222    0.8119    0.8170       638
+
+    accuracy                         0.8153      1256
+   macro avg     0.8153    0.8153    0.8153      1256
+weighted avg     0.8154    0.8153    0.8153      1256
+ 
