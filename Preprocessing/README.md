@@ -47,7 +47,7 @@ Even though we had a balanced dataset across "sex" and "age" variables, we've pu
 ### Null ViewPosition classification
 As explained in previous sections, we did the COVID classification using only RX images that were done in PA position. We found that a big part of our dataset didn't have the ViewPosition field informed, so we were not including these cases in our study.
 
-![ViewPositions](./ViewPositions.PNG)
+<img src="./Images/ViewPositions.PNG">
 
 Our Silver Dataset was not affected by these null images, since the only RX machine model we're including in this dataset had all ViewPosition fields informed. Unfortunately, this was not the case for the Gold Dataset, where Bellvitge also uses different RX brands that don't inform its ViewPosition. Since we could't afford to lose RX images from our Gold Dataset, we decided to use a NN to assign the ViewPosition.
 
@@ -58,7 +58,7 @@ During our dataset exploration, we found that some RX images were not done corre
 
 We imagined that these grey images would have a small pixel array standard deviation. As expected, the images with the smallest values were the "grey" ones, and the ones that we finally removed from our datasets:
 
-![Std](./Std_low.PNG)
+<img src="./Images/Std_low.PNG">
 
 ### Removal of images wrongly labeled as "Chest" body position
 Another thing we noticed while exploring our dataset was that there were some images that represented parts of the body different than "Chest" (hands, feet...). In order to remove them, we explored two ideas:
@@ -75,7 +75,8 @@ k-means algorithm works best with low dimensionality features. We tried PCA and 
 
 ##### *PCA way*
 We applied PCA and reduced our features to 3 dimensions. Even though in the plots it looked like we could find something, our features explained only the 23% of our variance.
-![PCA_2D_3D](./PCA_2D_3D.PNG)
+
+<img src="./Images/PCA_2D_3D.PNG">
 Because of that, we directly went to the t-SNE way
 
 ##### *t-SNE way*
@@ -86,7 +87,7 @@ Before applying t-SNE on high dimensional data, it's often recommended to reduce
 
 We found that we could see better clusters with Perplexity = 25:
 
-<img src="./t-SNE_samp-30451_pca-400_perp-25.PNG" height="400">
+<img src="./Images/t-SNE_samp-30451_pca-400_perp-25.PNG" height="400">
 
 ##### The clustering
 We decided to start with 4 clusters, since the "Elbow method" suggested it would be the best number.
@@ -94,11 +95,11 @@ We decided to start with 4 clusters, since the "Elbow method" suggested it would
 
 However, we could not find any cluster of different body positions. We retried clustering with a bigger number, 15, but we got the same results. In fact, as we can see in the plot, clusters are still pretty big, and images that are far from the accumulation points (which are probably the ones we're interested to remove) are included in big clusters as well.
 
-<img src="./t-SNE_15-means.PNG" height="500">
+<img src="./Images/t-SNE_15-means.PNG" height="500">
 
 #### 2) Use of image retrieval techniques to find similar wrongly labeled images
 To find similar images, we applied a PCA(512) to the normalized data at the start of this section, and we L2 normalized again. Then, we picked the features of the image on which we wanted to find similar ones and applied the dot product to the whole features. The images with bigger score are the most similar (including the image itself, whichobviously scores 1), while the ones with less score are the least similar.
 
 Thanks to this technique, we could also find and remove "grey" and blurry images that we could not find with the "Standard Deviation" techique from before:
 
-<img src="./Grey-ones-2.PNG" height="500">
+<img src="./Images/Grey-ones-2.PNG" height="500">
