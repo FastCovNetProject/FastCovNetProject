@@ -1,11 +1,7 @@
 ## Where is ChestCOVNet looking at?
 
 ### Introduction
-Media y desviación stándard de la muestra para casos y controles en dataset
-Primeras pruebas 77f1, alrededor de 80%precision/recall. 
-Buenos resultados pero no lógicos para radiólogo torácico. 
-Decisión de buscar métodos de interpretabilidad.
-We detect the problem of non interpretable predictions
+ChestCovNet models with the various architectures that have been tried soon reached decent performance with around 80 percent of precision, recall and f1. However when visualizing correct and incorrect predictions a pattern for decision was not identified. This moved us to try to understand the model's decision with interpretability techniques. 
 
 ### GradCAM and GradCAM++
 #### 1st Hypotesis: A visual explanation with gradient weighted class activation maps can be useful to interpret predictions from our model: GradCAM 
@@ -63,6 +59,31 @@ element-wise multiplication might keep the benefits of both methods.
 
 #### 4th Experiment:
 
+![](https://github.com/FastCovNetProject/FastCovNetProject/blob/main/Interpretability/Images/eGgradcam1.jpg)![](https://github.com/FastCovNetProject/FastCovNetProject/blob/main/Interpretability/Images/eGgradcam2.png
+)
+
 #### Conclusion from 4th Experiment:
 GuidedGradCAM is both high-resolution identifing the anatomical structures of the chest xray and class-discriminative hightlinghting some regions of the image that are suposed to be relevant for class activation. While this method is more informative about the areas of the image that the model is targeting for prediction, the hightlighted regions change greatly in the various experiments with no understandable pattern. The model is capable of detecting anormality but doesn't behave in a robust fashion. 
-When presenting the model with previously chosen inputs, cases with obvious pneumonia findings
+
+#### 5th Experiment:
+
+For testting robustness in the model when presented with obvious radiological findings inputs were chosen with bilateral pneumonia and a comobination of techniques was performed. 
+
+![](https://github.com/FastCovNetProject/FastCovNetProject/blob/main/Interpretability/Images/neumonia1.jpg)
+
+
+![](https://github.com/FastCovNetProject/FastCovNetProject/blob/main/Interpretability/Images/neumonia2.jpg)
+
+
+![](https://github.com/FastCovNetProject/FastCovNetProject/blob/main/Interpretability/Images/neumonia7.png)
+
+
+![](https://github.com/FastCovNetProject/FastCovNetProject/blob/main/Interpretability/Images/pneumonia%204.png)
+
+#### Conclusion of 5th Experiment:
+
+The model correctly classified all cases (n=9) as COVID19 and was able to identify the lung pneumonia. However in most cases it only focused in one of the lungs while the findings were bilateral. According to literature this unilateral focus shouldn't be secondary to the interpretability technique so we conclude that it is the true focus of the model. 
+
+### Global Conclusions:
+
+ChestCovNet models (both DenseNet and ResNet architectures) are able to classify chest X ray in COVID19 positive or negative. However we have not being able to identify image characteristics that make the model decide. This could be due to lack of robustness in the model but since robustness improves with obvious radiological findings we must conclude that there might be other characteristics in the image that take to model to make a decision. This characteristics might be at pixel level, texture level o too abstract to be understandable by human. 
