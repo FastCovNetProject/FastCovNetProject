@@ -14,7 +14,7 @@ For each network, the winner metrics of precission and recall for both classes (
 ### ResNet
 Deep convolutional network with residual units, i.e., identity maps skipping layers.
 
-![ResNet training](FastCovNetProject/COVID Classification/ChestCovNet/Experiments/ResNet/Exp5_Adam.jpg )
+![Alt text](/Experiments/ResNet/Exp5_Adam.jpg)
 
 Model: ResNet; Training epochs: 39; Batch size: 40; Results: 
 
