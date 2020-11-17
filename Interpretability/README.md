@@ -53,7 +53,6 @@ Guided Backpropagation visualizes gradients with respect to the image where nega
 IIn our experiment the model correctly detects the anatomic elements in the chest radiograph related to mediastinal structures(heart, pulmonary vessels and great vessels like aorta and cava vein), lung limits and extra thoracic bone structures, however, it fails to be informative about with of the structures is more relevant for class activation.
 
 We surely have contributed to this limitation since we were not able to implement the method in the deeper layers of the model. [Springerberg et al](https://arxiv.org/pdf/1412.6806.pdf) state that it is possible to perform guided backpropagation even in the last layers of the model. After several attempts we obtained non informative outputs. This is a clear improvement area for the project that we would like to complete in the future
-n our experiment the model correctly detects the anatomic elements in the chest radiograph related to mediastinal structures(heart, pulmonary vessels and great vessels like aorta and cava vein), lung limits and extratoracic bone structures, however, it fails to be informative about with of the structures is more relevant for class activation. 
 
 ### Guided GradCAM
 #### 4rd Hypotesis: Our problem needs a method that is both hight resolution and class discriminative: Guided GradCAM. 
