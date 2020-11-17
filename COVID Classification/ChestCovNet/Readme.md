@@ -14,9 +14,11 @@ For each network, the winner metrics of precission and recall for both classes (
 ### ResNet
 Deep convolutional network with residual units, i.e., identity maps skipping layers.
 
+![ResNet training](FastCovNetProject/COVID Classification/ChestCovNet/Experiments/ResNet/Exp5_Adam.jpg )
+
 Model: ResNet; Training epochs: 39; Batch size: 40; Results: 
 
-                 precision    recall  f1-score   support
+                 precision    recall  f1-score   support      
         Case        0.8280    0.7945    0.8109       618
      Control        0.8084    0.8401    0.8240       638
 
