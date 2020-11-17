@@ -11,11 +11,9 @@ We detect the problem of non interpretable predictions
 #### 1st Hypotesis: A visual explanation with gradient weighted class activation maps can be useful to interpret predictions from our model: GradCAM 
 
 Grad-CAM uses the gradient information flowing into the last convolutional layer of the CNN to assign importance values to each neuron for a particular decision of interest. The last convolutional layer of the model is the best suited for this task, due to it's convolutional nature it will retain spatial information about the input and being the deeper layer it will capture higher level semantic class-specific information. 
-To obtain the class-discriminative localization map, Grad-CAM computes the gradient of Yc (score for class c) with respect to feature map activations Ak of a convolutional layer. These gradients flowing back are global-average-pooled over the width and height dimensions (indexed by i and j respectively) to obtain the neuron importance weights αck.
-This weights αck represents a partial linearization of the deep network downstream from A, and captures the ‘importance’ of feature map k for a target class c.
-We perform a weighted combination of forward activation maps, and follow it by a ReLU to obtain,
+To obtain the class-discriminative localization map, Grad-CAM computes the gradient of the score for the target class with respect to feature map activations of a convolutional layer (the last convolutional layer in our experiments). These gradients flowing back are global-average-pooled over the width and height dimensions to obtain the neuron importance weights. This weights capture the ‘importance’ of the feature map for the target class. Then a weighted combination of forward activation maps is computed, followed a ReLU to obtain the heatmap.
 
-Insertar formula de GradCAM. 
+Insertar esqeuma de GradCAM. 
 
 #### 2nd Hypotesis: GradCAM limiations might be affecting the interpretation in our experiment: GradCAM++
 Features causing class activation in chest radiographs might be more than one (for example multilobar pneumonia) and Grad-CAM has shown limitations to properly localize objects in an image if the image contains multiple occurrences of the same class activation. In addition another consequence of an unweighted average of partial derivatives is that the localization map might not correspond to the entire features but bits and parts of it. 
