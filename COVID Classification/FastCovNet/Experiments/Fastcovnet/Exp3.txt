@@ -1,0 +1,14 @@
+#############################################################################
+Model: MultiModalNet 
+Training epochs: 99 
+Batch size: 40 
+Results: 
+              precision    recall  f1-score   support
+
+        Case     0.8235    0.5000    0.6222        28
+     Control     0.5000    0.8235    0.6222        17
+
+    accuracy                         0.6222        45
+   macro avg     0.6618    0.6618    0.6222        45
+weighted avg     0.7013    0.6222    0.6222        45
+ 

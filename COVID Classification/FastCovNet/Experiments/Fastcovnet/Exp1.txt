@@ -1,0 +1,42 @@
+#############################################################################
+Model: MultiModalNet 
+Training epochs: 39 
+Batch size: 40 
+Results: 
+              precision    recall  f1-score   support
+
+        Case     0.8400    1.0000    0.9130        21
+     Control     1.0000    0.6000    0.7500        10
+
+    accuracy                         0.8710        31
+   macro avg     0.9200    0.8000    0.8315        31
+weighted avg     0.8916    0.8710    0.8604        31
+ 
+#############################################################################
+Model: MultiModalNet 
+Training epochs: 39 
+Batch size: 40 
+Results: 
+              precision    recall  f1-score   support
+
+        Case     0.8421    0.8000    0.8205        20
+     Control     0.6000    0.6667    0.6316         9
+
+    accuracy                         0.7586        29
+   macro avg     0.7211    0.7333    0.7260        29
+weighted avg     0.7670    0.7586    0.7619        29
+ 
+#############################################################################
+Model: MultiModalNet 
+Training epochs: 39 
+Batch size: 40 
+Results: 
+              precision    recall  f1-score   support
+
+        Case     0.7320    1.0000    0.8452        71
+     Control     0.0000    0.0000    0.0000        26
+
+    accuracy                         0.7320        97
+   macro avg     0.3660    0.5000    0.4226        97
+weighted avg     0.5358    0.7320    0.6187        97
+ 
