@@ -21,10 +21,7 @@ As mentioned, one of the first hypothesis regarding the experiments with FastCov
 
 ![FastCovNet training](https://github.com/FastCovNetProject/FastCovNetProject/blob/main/COVID%20Classification/FastCovNet/Experiments/Fastcovnet/Exp4.jpg)
 
-Model: MultiModalNet 
-Training epochs: 99 
-Batch size: 40 
-Results: 
+Model: MultiModalNet; Training epochs: 99; Batch size: 40; Results: 
 
                   precision    recall  f1-score   support
         Case         0.8000    0.7143    0.7547        28
