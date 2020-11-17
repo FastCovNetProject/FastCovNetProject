@@ -1,4 +1,4 @@
-# Preprocessing
+# Data Preprocessing
 ## Data sources
 All the data used in this project comes from the PADRIS program and has been previously anonymized. It has been gathered from the following sources:
 * SIMDCAT (Sistema d'Imatge Mèdica Digital de Catalunya): Medical images we're using to classify whether our patient is COVID positive or not come from this repository. These images are stored in the DICOM standard.
@@ -108,3 +108,18 @@ To find similar images, we applied a PCA(512) to the normalized data at the star
 Thanks to this technique, we could also find and remove "grey" and blurry images that we could not find with the "Standard Deviation" techique from before:
 
 <img src="./Images/Grey-ones-2.PNG" height="500">
+
+## Conclusions
+In order to have a good image classification model, it's very important to have a lot of good quality data. Unfortunately, both things, quantity and quality of data, are very hard to achieve in the medical field.
+It took aprox. 4 months to complete the circuit of image retrieval, even though we already knew the theorical steps to follow. Meanwhile, could build the infrastructure, security measures and practice with different datasets.
+On the other hand, we had to spend lots of hours in preprocessing this data, as we've described in this section. There was a lot of data visualization and filtering involved, as well as analysis on how to join data from different sources.
+Moreover, we also found that we had some low quality images and labels. We used several techniques to improve our dataset:
+* Missing labels imputation:
+   * **Worked**: Classification of missing ViewPosition data with Densenet121
+* Image removal:
+   * **Worked**:
+      * Image pixel standard deviation filtering
+      * Similar image scoring
+   * **Didn't work very well**:
+      * Image pixel average value filtering 
+      * PCA/t-SNE + k-means clustering
