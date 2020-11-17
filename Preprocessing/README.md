@@ -1,9 +1,13 @@
 # Data Preprocessing
 ## Data sources
 All the data used in this project comes from the PADRIS program and has been previously anonymized. It has been gathered from the following sources:
-* SIMDCAT (Sistema d'Imatge Mèdica Digital de Catalunya): Medical images we're using to classify whether our patient is COVID positive or not come from this repository. These images are stored in the DICOM standard.
-* Catalan COVID19 Registry: In this registry we have the patients that have been tested positive using the PCR technique, as well as the date they had this test done.
-* Central Insured Registry: This is where our patients age and sex comes from.
+* Medical images and related data (used in Silver & Gold dataset)
+   * SIMDCAT (Sistema d'Imatge Mèdica Digital de Catalunya): Medical images we're using to classify whether our patient is COVID positive or not come from this repository. These images are stored in the DICOM standard.
+   * Catalan COVID19 Registry: In this registry we have the patients that have been tested positive using the PCR technique, as well as the date they had this test done.
+   * Central Insured Registry: This is where our patients age and sex comes from.
+* Tabular data (used in Gold dataset)
+   * Hospital de Bellvitge: The hospital provides tabular data like blood test results, PCRs and RX evaluation from its specialists. 
+  
 
 ## Data manipulation
 ### Image data
