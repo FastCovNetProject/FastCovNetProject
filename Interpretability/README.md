@@ -39,7 +39,7 @@ The heatmap obtained so far include wide hot areas in the image which are not ve
 Guided Backpropagation visualizes gradients with respect to the image where negative gradients are suppressed when backpropagating through ReLU layers. This aims
 to capture pixels detected by neurons. The resulted visualization maos are high-resolution and highlight fine-grained details in the image. They have the limitation of not being class-discriminative but might provide us a better understanting of the estructures that our model is targeting. 
 
-![GBP](/Interpretability/Images/gbp.png)
+![GBP](https://github.com/FastCovNetProject/FastCovNetProject/blob/main/Interpretability/Images/gbp.JPG)
 
 #### 3rd Experiment:
 
@@ -53,7 +53,7 @@ We surely have contributed to this limitation since we were not able to inplemen
 Combination of the two methods might provide us with the intended insight. The fusion of the outputs of Guided Backpropagation and Grad-CAM visualizations via
 element-wise multiplication might keep the benefits of both methods. 
 
-![GuidedGradCAM](/Interpretability/Images/gradcam y guidedgbp.png)
+![GuidedGradCAM](https://github.com/FastCovNetProject/FastCovNetProject/blob/main/Interpretability/Images/gradcam%20y%20guidedbp.png)
 
 #### 4th Experiment:
 
