@@ -8,10 +8,12 @@ We're using a new DL workstation with the following specs:
 
 <img src="./Images/Hardware.PNG">
 
+
 ## Frameworks & Platform
 Our workstation has Ubuntu 20.04 LTS installed. In it, we installed JupyterHub, in order to work multiuser, and on top of it, we used two Frameworks: Pytorch and MONAI (which is also based on Pytorch). MONAI offers us some extra transformations that are very useful in the medical field, as well as some extra predefined networks.
 
-<img src="./Images/Frameworks.PNG">
+
+<img src="./Images/Frameworks.PNG" height="300">
 
 
 ## Networking & Security
