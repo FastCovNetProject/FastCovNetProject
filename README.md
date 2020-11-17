@@ -35,7 +35,7 @@ For this project we have worked with public health system data. For accessing an
 *Silver Dataset*
 
 Following protocol approval a petition was sent to Padris Program for imaging data:
-- COVID19 group: Patients with a COVID19 positive PCR test and a Chest X Ray both between March21st and May21st 2020. 
+- COVID19 group: Patients with a COVID19 positive PCR test and a Chest X Ray. 
 - No-COVID19 group: Previous (before 2020) chest X Rays from patients in COVID19 group, chest X Rays of patients with different lung conditions. 
 
 *Gold Dataset*
