@@ -6,7 +6,7 @@ All the data used in this project comes from the PADRIS program and has been pre
    * Catalan COVID19 Registry: In this registry we have the patients that have been tested positive using the PCR technique, as well as the date they had this test done.
    * Central Insured Registry: This is where our patients age and sex comes from.
 * Tabular data (used in Gold dataset)
-   * Hospital de Bellvitge: The hospital provides tabular data like blood test results, PCRs and RX evaluation from its specialists. 
+   * Hospital de Bellvitge: The hospital provides tabular data from its COVID "fast circuit". It includes like blood test results, PCRs and RX evaluation from its specialists. 
   
 
 ## Data manipulation
