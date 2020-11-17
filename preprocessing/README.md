@@ -61,19 +61,24 @@ We imagined that these grey images would have a small pixel array standard devia
 ![Std](./Std_low.PNG)
 
 ### Removal of images wrongly labeled as "Chest" body position
-Another thing we noticed while exploring our dataset was that there were some images that represented parts of the body different than "Chest" (hands, feet...). In order to remove them, since they were pretty different than "Chest" images, we thought that we could create some clusters using k-means algorithm and identify them. We did the following:
+Another thing we noticed while exploring our dataset was that there were some images that represented parts of the body different than "Chest" (hands, feet...). In order to remove them, we explored two ideas:
+* Finding clusters with PCA/t-SNE + k-means
+* Use of image retrieval techniques to find similar wrongly labeled images.
+
+For both ideas, we first had to do the following steps:
 1. Load a pretrained Resnet and create a dataloader with all images and the same transformations we were using in Validation.
 1. Remove the classification layer of the network and extract the features of our images
 1. L2 normalize them
 
+#### Finding clusters with PCA/t-SNE + k-means
 k-means algorithm works best with low dimensionality features. We tried PCA and t-SNE to do so:
 
-#### PCA way
+##### PCA way
 We applied PCA and reduced our features to 3 dimensions. Even though in the plots it looked like we could find something, our features explained only the 23% of our variance.
 ![PCA_2D_3D](./PCA_2D_3D.PNG)
 Because of that, we directly went to the t-SNE way
 
-#### t-SNE way
+##### t-SNE way
 Before applying t-SNE on high dimensional data, it's often recommended to reduce its dimensionality using tools like PCA. We followed the following steps:
 1. Apply PCA and reduce from 2048 dimensions to 400 (99% of variance), although we also tried with 50, 100 and 200
 1. L2 normalize them
@@ -83,6 +88,13 @@ We found that we could see better clusters with Perplexity = 25:
 
 <img src="./t-SNE_samp-30451_pca-400_perp-25.PNG" height="400">
 
-#### Clustering
+##### The clustering
 We decided to start with 4 clusters, since the "Elbow method" suggested it would be the best number.
 <img src="./Elbow-kmeans.PNG" height="300">
+
+However, we could not find any cluster of different body positions. We retried clustering with a bigger number, 15, but we got the same results. In fact, as we can see in the plot, clusters are still pretty big, and images that are far from the accumulation points (which are probably the ones we're interested to remove) are included in big clusters as well.
+
+<img src="./t-SNE_15-means.PNG" height="500">
+
+#### The use of image retrieval techniques to find similar wrongly labeled images
+
