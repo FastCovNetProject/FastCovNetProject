@@ -23,3 +23,10 @@ As mentioned, one of the first hypothesis regarding the experiments with FastCov
 -------------------------------------
 
 ## Conclusions
+
+
+-------------------------------------
+
+#### References
+
+* [Gessert N, Nielsen M, Shaikh M, Werner R, Schlaefer A. Skin lesion classification using ensembles of multi-resolution EfficientNets with meta data. MethodsX. 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7150512/pdf/main.pdf)
