@@ -123,7 +123,7 @@ Moreover, we also found that we had some low quality images and labels. We used 
 * Image removal:
    * **Worked**:
       * Image pixel standard deviation filtering
-      * Similar image scoring
+      * Similarity image scoring
    * **Didn't work very well**:
       * Image pixel average value filtering 
       * PCA/t-SNE + k-means clustering
