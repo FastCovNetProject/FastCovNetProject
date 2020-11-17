@@ -1,6 +1,10 @@
 # ChestCovNet
 
-In this section the objective is to develop an architecture that we call **ChestCovNet**, which will be based on some existing network architecture and must be able to perform our task of interest: to predict if a patient has COVID-19 or not based on its chest radiograph. For this task, which is a binary classification problem based on images, we rely on deep convolutional networks, drawing inspiration from the work by Tang, YX., Tang, YB., Peng, Y. et al. *Automated abnormality classification of chest radiographs using deep convolutional neural networks*. This paper is an overview that shows that several convolutional architectures like VGG, ResNet, DenseNet etc. achieve high or very high accuracies (ROC AUC) in this type of binary classification task with radiographs. We have selected three architectures as our baseline, following a higher-performance criteria. It is worth highlighting that our target variable (COVID19 positive/negative) is different to the one employed in the mentioned paper (general "abnormality" in the chest radiograph), and that in a good portion of cases, a COVID19 positive patient does not show any abnormality in its chest radiograph that is perceptible for humans. For this reason, one of the first hypothesis that we set is that the accuracies we will obtain will be lower than those showed in the paper. This is confirmed by our experiments. Still, we also set the hypothesis that the networks will be able to "see more" than the human eye, which also seems to be confirmed by the experiments.
+In this section the objective is to develop an architecture that we call **ChestCovNet**, which will be based on some existing network architecture and must be able to perform our task of interest: to predict if a patient has COVID-19 or not based on its chest radiograph. For this task, which is a binary classification problem based on images, we rely on deep convolutional networks, drawing inspiration from the work by Tang, YX., Tang, YB., Peng, Y. et al. *Automated abnormality classification of chest radiographs using deep convolutional neural networks*. This paper is an overview that shows that several convolutional architectures like VGG, ResNet, DenseNet etc. achieve high or very high accuracies (ROC AUC) in this type of binary classification task with radiographs. We have selected three architectures as our baseline, following a higher-performance criteria. 
+
+It is worth highlighting that our target variable (COVID19 positive/negative) is different to the one employed in the mentioned paper (general "abnormality" in the chest radiograph), and that in a good portion of cases, a COVID19 positive patient does not show any abnormality in its chest radiograph that is perceptible for humans (i.e., the ground truth is not a radiologist's veredict, but the PCR test). For this reason, one of the first hypothesis that we set is that the accuracies we will obtain will be lower than those showed in the paper. This is confirmed by our experiments. Still, we also set the hypothesis that the networks will be able to "see more" than the human eye, which also seems to be confirmed by the experiments.
+
+--------------------------------------
 
 ## The architectures and strategies
 We select three architectures, ResNet, DenseNet, and GoogLeNet, following a criteria of performance in the aforementioned study. In all the three cases we have employed a network pretrained on Imagenet (i.e., transfer learning approach), and we have adapted the last layer (fully connected, for classification) to our task, with one single output neuron followed by a Sigmoid operation and the Binary Cross Entropy Loss as the loss function. Alternatively, we have tried employing two neurons for the output (one for each class) and the Cross Entropy Loss (i.e., a Softmax operation and the Negative Log Likelihood Loss). There is no significative difference between these two approaches, as they represent essentially the same. 
@@ -8,6 +12,8 @@ We select three architectures, ResNet, DenseNet, and GoogLeNet, following a crit
 Both the Adam and the SGD optimizers with different parameters have been tried. We have not found significative differences in the final performances of the networks depending on this choice, although some differences in the trainig behavior have been observed.
 
 Our original dataset was very unbalanced, with many more controls than cases. We have opted for manually balancing the dataset, by sampling a number of controls equal to the number of cases. This is due to the fact that, as should be expected, we have observed worst metrics for the minority class when employing the whole dataset. This approach is slightly "wasteful", as many images are not employed, but we have allowed ourselves to do it under the premise that the balanced dataset was still big enough for the task. Other more involved approaches like moving the decision threshold for the prediction of case and control could be employed.
+
+--------------------------------------
 
 ## Experiments and results:
 
@@ -59,6 +65,10 @@ Model: GoogLeNet; Training epochs: 23; Batch size: 40; Results:
     weighted avg     0.7916    0.7914    0.7913      1256
 
 The main difference between these two graphs is the noise in the loss of the validation set. This may be due to differences in the batch size and also in the optimizer, as the network in the graph above has been trained with Adam while the one below has been trained with SGD.
+
+All the results of this section (and also some not included) are in the [Experiments](/Experiments/) folder.
+
+--------------------------------------
 
 ## Conclusions
 
