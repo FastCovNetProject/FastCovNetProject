@@ -62,23 +62,23 @@ We imagined that these grey images would have a small pixel array standard devia
 
 ### Removal of images wrongly labeled as "Chest" body position
 Another thing we noticed while exploring our dataset was that there were some images that represented parts of the body different than "Chest" (hands, feet...). In order to remove them, we explored two ideas:
-* Finding clusters with PCA/t-SNE + k-means
-* Use of image retrieval techniques to find similar wrongly labeled images.
+1. Finding clusters with PCA/t-SNE + k-means
+1. Use of image retrieval techniques to find similar wrongly labeled images.
 
 For both ideas, we first had to do the following steps:
 1. Load a pretrained Resnet and create a dataloader with all images and the same transformations we were using in Validation.
 1. Remove the classification layer of the network and extract the features of our images
 1. L2 normalize them
 
-#### Finding clusters with PCA/t-SNE + k-means
+#### 1) Finding clusters with PCA/t-SNE + k-means
 k-means algorithm works best with low dimensionality features. We tried PCA and t-SNE to do so:
 
-##### PCA way
+##### *PCA way*
 We applied PCA and reduced our features to 3 dimensions. Even though in the plots it looked like we could find something, our features explained only the 23% of our variance.
 ![PCA_2D_3D](./PCA_2D_3D.PNG)
 Because of that, we directly went to the t-SNE way
 
-##### t-SNE way
+##### *t-SNE way*
 Before applying t-SNE on high dimensional data, it's often recommended to reduce its dimensionality using tools like PCA. We followed the following steps:
 1. Apply PCA and reduce from 2048 dimensions to 400 (99% of variance), although we also tried with 50, 100 and 200
 1. L2 normalize them
@@ -96,5 +96,9 @@ However, we could not find any cluster of different body positions. We retried c
 
 <img src="./t-SNE_15-means.PNG" height="500">
 
-#### The use of image retrieval techniques to find similar wrongly labeled images
+#### 2) Use of image retrieval techniques to find similar wrongly labeled images
+To find similar images, we applied a PCA(512) to the normalized data at the start of this section, and we L2 normalized again. Then, we picked the features of the image on which we wanted to find similar ones and applied the dot product to the whole features. The images with bigger score are the most similar (including the image itself, whichobviously scores 1), while the ones with less score are the least similar.
 
+Thanks to this technique, we could also find and remove "grey" and blurry images that we could not find with the "Standard Deviation" techique from before:
+
+<img src="./Grey-ones-2.PNG" height="500">
