@@ -1,4 +1,4 @@
-### FastCovNet
+# FastCovNet
 
 In this section, we present the FastCovNet architecture, the experiments and their results. FastCovNet should be an architecture capable of intaking chest X-ray images and tabular, structured data from a patiend (i.e., multimodal data) and predict the target variable, COVID19 positive or negative. The tabular data are several variables from the patient, ranging from sex and age to to blood levels of potasium or eosinophils. 
 
