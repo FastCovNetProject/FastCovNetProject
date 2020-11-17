@@ -21,3 +21,13 @@ For the legal concerns, datasets are kept in the workstation as anonymous as pos
 We've blocked our workstation for data extraction. In order to do so, we’ve set up a VM that is securely connected to the workstation and that has IP filtering and some policies that block data extraction. This is the VM that the members that don't work at AQuAS are using.
 
 <img src="./Images/Networking.PNG">
+
+Some of the actions that have been taking in order to protect the data are:
+
+**DL Workstation**
+* Minimal inbound & outbound connections allowed by firewall
+* SSH Forward & Reverse tunnelings
+
+**RDP (Remote Desktop)**
+* IP filtering
+* GPOs to disable data extraction
