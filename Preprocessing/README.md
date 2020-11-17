@@ -1,4 +1,4 @@
-# Data Preprocessing => Add classification viewposition results!
+# Data Preprocessing
 ## Data sources
 All the data used in this project comes from the PADRIS program and has been previously anonymized. It has been gathered from the following sources:
 * Medical images and related data (used in Silver & Gold dataset)
@@ -60,7 +60,10 @@ As explained in previous sections, we did the COVID classification using only RX
 
 Our Silver Dataset was not affected by these null images, since the only RX machine model we're including in this dataset had all ViewPosition fields informed. Unfortunately, this was not the case for the Gold Dataset, where Bellvitge also uses different RX brands that don't inform its ViewPosition. Since we could't afford to lose RX images from our Gold Dataset, we decided to use a NN to assign the ViewPosition.
 
-With more than 150k images to train, validate and test the network, we got >96% accuracy in only 15 epochs on not pretrained Densenet121. We inferred the ViewPosition to all images that didn't have this field informed and, thanks to that, we could increase our Gold Dataset from XXX to YYY images.
+With more than 150k images to train, validate and test the network, we got >96% accuracy in only 30 epochs on a Densenet121. We inferred the ViewPosition to all images that didn't have this field informed and, thanks to that, we could increase our Gold Dataset by aprox 50% more images.
+
+<img src="./Images/ViewPosition_validation_test.PNG">
+
 
 ### Removal of blank/empty RX images
 During our dataset exploration, we found that some RX images were not done correctly and were "grey", with no patient in it. Since these images could reduce the performance of our networks, we decided to try remove them.
