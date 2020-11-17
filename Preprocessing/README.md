@@ -15,7 +15,7 @@ In order to feed our algorithms, we first had to manipulate our DICOM images. DI
 
 ### Tabular data
 The data for the Gold Dataset was not stored in a estructured database therefore we had to take non-conventional steps for data retrieval:
-1. Using AutoHotKey an automat was created that interated through a loop of patients IDs. This automat interacted with the Clinical Management Application (Argos) in the computer replicating the steps that a human would perform to interact with it. 
+1. Using AutoHotKey an automat was created that interated through a loop of patients IDs. This automat interacted with the Clinical Management Application (Argos) in the computer replicating the steps that a human would perform to interact with it. For performing this step a great knowledge of Argos' functioning was needed, examples are not attached for security reasons. 
 2. Argos shows the information in .pdf format, the information was copied to .txt.  
 3. A custom Python loop was created for each clinical data modality (example for blod tests included in folder). It iterated through patients and extracted the relevant data to .csv format.
 4. Data in .csv format was handed over to Padris for annonymization, codification and association with images. 
