@@ -25,7 +25,7 @@ Features causing class activation in chest radiographs might be more than one (f
 
 In an attempt to overcome this issue we tried GradCAM++. GradCAM++ which could be considered a generalized reformulation of Grad-CAM that tries to fix this problem by taking a weighted average of the pixel-wise gradients. For this the target layer's scores are passed through an exponential function. We tried this approach in order to improve our visual explanation maps.
 
-![GradCAM++](/Interpretability/Images/gradcam++.jpg)
+![GradCAM++](https://github.com/FastCovNetProject/FastCovNetProject/blob/main/Interpretability/Images/gradcam%2B%2B.JPG)
 
 #### 2nd Experiment: 
 
