@@ -17,6 +17,8 @@ To obtain the class-discriminative localization map, Grad-CAM computes the gradi
 
 #### 1st Experiment:
 
+[](https://github.com/FastCovNetProject/FastCovNetProject/blob/main/Interpretability/Images/egradCAM.png)
+
 #### Conclusion from 1st Experiment:
 The first heatmaps that we obtained didn't look very informative nor very consistent. They were able to detect obvious abnormality but focused mainly on the center of the image and the diafragm.
 
@@ -28,6 +30,8 @@ In an attempt to overcome this issue we tried GradCAM++. GradCAM++ which could b
 ![GradCAM++](https://github.com/FastCovNetProject/FastCovNetProject/blob/main/Interpretability/Images/gradcam%2B%2B.JPG)
 
 #### 2nd Experiment: 
+
+[](https://github.com/FastCovNetProject/FastCovNetProject/blob/main/Interpretability/Images/eGradCAM%20y%20%2B%2B.PNG)
 
 #### Conclusion from 2nd Experiment:
 The GradCAM++ obtained do look more intense in some of our experiments while in other stay the same. The heatmaps still have wide areas of the image marked as important for the prediction of the target class with many involved structures. Successive attempts don't show robustness in the selected areas for the target class. 
@@ -42,6 +46,8 @@ to capture pixels detected by neurons. The resulted visualization maos are high-
 ![GBP](https://github.com/FastCovNetProject/FastCovNetProject/blob/main/Interpretability/Images/gbp.JPG)
 
 #### 3rd Experiment:
+
+[](https://github.com/FastCovNetProject/FastCovNetProject/blob/main/Interpretability/Images/eGBp.PNG)
 
 #### Conclusion from 3er Experiment:
 In our experiment the model correctly detects the anatomic elements in the chest radiograph related to mediastinal structures(heart, pulmonary vessels and great vessels like aorta and cava vein), lung limits and extratoracic bone structures, however, it fails to be informative about with of the structures is more relevant for class activation. 
