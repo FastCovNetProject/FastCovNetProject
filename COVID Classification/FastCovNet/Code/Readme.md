@@ -1,1 +1,1 @@
-Code explanation
+The notebook in this folder contain the FastCovNet Multimodal network. Most of the code is common to the notebooks in ChestCovNet, except for the network definition and other few particularities. The code is commented so that it should be reasonably readable.
