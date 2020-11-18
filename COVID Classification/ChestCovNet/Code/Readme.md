@@ -1,1 +1,1 @@
-Code explanation
+The three notebooks in this folder contain the three networks for ChestCovNet: DenseNet, ResNet and GoogLeNet. Most of the code is common to the three notebooks, except for the network definition and other few particularities. The code is commented so that it should be reasonably readable.
