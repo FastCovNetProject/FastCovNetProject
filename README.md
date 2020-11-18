@@ -1,6 +1,22 @@
 # FastCovNetProject
 
 ### Multimodal Deep Learning for COVID19 Diagnosis
+
+------------------------
+
+#### Outline:
+[1. Introduction](https://github.com/FastCovNetProject/FastCovNetProject/blob/main/README.md)
+
+[2. Infrastructure](https://github.com/FastCovNetProject/FastCovNetProject/blob/main/Infrastructure%20%26%20Software/README.md)
+
+[3. Tensorboard](https://github.com/FastCovNetProject/FastCovNetProject/blob/main/Tensorboard/README.md)
+
+[4. Preprocessing](https://github.com/FastCovNetProject/FastCovNetProject/blob/main/Preprocessing/README.md)
+
+[5. COVID19 Classification](https://github.com/FastCovNetProject/FastCovNetProject/blob/main/COVID%20Classification/Readme.md)
+
+[6. Interpretability](https://github.com/FastCovNetProject/FastCovNetProject/blob/main/Interpretability/README.md)
+
 ------------------------
 
 #### Motivation
