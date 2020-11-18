@@ -3,6 +3,8 @@
 ### Introduction
 ChestCovNet models with the various architectures that have been tried soon reached decent performance with around 80 percent of precision, recall and f1. However, when visualizing correct and incorrect predictions a pattern for decision was not identified. This moved us to try to understand the model's decision with interpretability techniques. 
 
+-----------------------
+
 ### GradCAM and GradCAM++ 
 [Chattopadhyay et al.](https://arxiv.org/pdf/1710.11063.pdf)
 #### 1st Hypotesis: A visual explanation with gradient weighted class activation maps can be useful to interpret predictions from our model: GradCAM 
@@ -35,6 +37,8 @@ In an attempt to overcome this issue, we tried GradCAM++. GradCAM++ which could 
 #### Conclusion from 2nd Experiment:
 The GradCAM++ obtained do look more intense in some of our experiments while in other stay the same. The heatmaps still have wide areas of the image marked as important for the prediction of the target class with many involved structures. Successive attempts do not show robustness in the selected areas for the target class.
 
+-----------------------
+
 ### GuidedBackpropagation 
 [Selvaraju et al.](https://ramprs.github.io/static/docs/IJCV_Grad-CAM.pdf)
 #### 3rd Hypotesis: Pixel-space gradient visualizations might work better for our problem: Guided Backpropagation 
@@ -53,6 +57,8 @@ Guided Backpropagation visualizes gradients with respect to the image where nega
 IIn our experiment the model correctly detects the anatomic elements in the chest radiograph related to mediastinal structures(heart, pulmonary vessels and great vessels like aorta and cava vein), lung limits and extra thoracic bone structures, however, it fails to be informative about with of the structures is more relevant for class activation.
 
 We surely have contributed to this limitation since we were not able to implement the method in the deeper layers of the model. [Springerberg et al](https://arxiv.org/pdf/1412.6806.pdf) state that it is possible to perform guided backpropagation even in the last layers of the model. After several attempts we obtained non informative outputs. This is a clear improvement area for the project that we would like to complete in the future
+
+-----------------------
 
 ### Guided GradCAM
 #### 4rd Hypotesis: Our problem needs a method that is both hight resolution and class discriminative: Guided GradCAM. 
@@ -86,6 +92,8 @@ For testing robustness in the model when presented with obvious radiological fin
 #### Conclusion of 5th Experiment:
 
 The model correctly classified all cases (n=9) as COVID19 and was able to identify the lung pneumonia. However, in most cases it only focused in one of the lungs while the findings were bilateral. According to literature this unilateral focus shouldn't be secondary to the interpretability technique, so we conclude that it is the true focus of the model. 
+
+-----------------------
 
 ### Global Conclusions:
 
