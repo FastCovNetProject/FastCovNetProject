@@ -1,34 +1,34 @@
 # Data Preprocessing
 ## Data sources
-All the data used in this project comes from the PADRIS program and has been previously anonymized. It has been gathered from the following sources:
+All the data used in this project comes from the "Agency of Health Quality and Assessment of Catalonia" (AQuAS), through the PADRIS program. It has been previously anonymized, and has been gathered from the following sources:
 * Medical images and related data (used in Silver & Gold dataset)
    * SIMDCAT (Sistema d'Imatge Mèdica Digital de Catalunya): Medical images we're using to classify whether our patient is COVID positive or not come from this repository. These images are stored in the DICOM standard.
    * Catalan COVID19 Registry: In this registry we have the patients that have been tested positive using the PCR technique, as well as the date they had this test done.
    * Central Insured Registry: This is where our patients age and sex comes from.
 * Tabular data (used in Gold dataset)
-   * Hospital de Bellvitge: The hospital provides tabular data from its COVID "fast circuit". It includes like blood test results, PCRs and RX evaluation from its specialists. 
+   * Hospital de Bellvitge: The hospital has directly collaborated with PADRIS project in order to provide tabular data from the hospital's "COVID fast circuit". It includes data like blood test results, PCR results and RX evaluation from its specialists. 
   
 
 ## Data manipulation
 ### Image data
-In order to feed our algorithms, we first had to manipulate our DICOM images. DICOM files tend to have hundreds of text variables (like Manufacturer, S/N, many Ids, view position, radiation...), as well as the image itself. This image can use many formats, but one of the most common formats would be a special type of JPEG Lossless, encoded in 16 bits of precision. The steps we did are the following:
+In order to feed our algorithms, we first had to manipulate our DICOM images. DICOM files tend to have hundreds of text variables (like Manufacturer, S/N, many Ids, view position, radiation...), as well as the image itself. This image be encoded in many formats, but one of the most common would be a special type of JPEG Lossless, encoded in 16 bits of precision. The steps we did are the following:
 1. Extract relevant DICOM metadata
 1. Extract the image from DICOM file
 1. Remove the black border surrounding the image
-1. Resize image to 224x224 and convert it to regular "lossy" JPG.
+1. Resize the image to 224x224 and convert it to "regular" lossy JPG.
 
 ### Tabular data
 The data for the Gold Dataset was not stored in a estructured database therefore we had to take non-conventional steps for data retrieval:
 1. Using AutoHotKey an automat was created that interated through a list of patient IDs. This automat interacted with the Clinical Management Application (Argos) in the computer replicating the steps that a human would perform to interact with it. For performing this step a great knowledge of Argos' functioning was needed, examples are not included for security reasons. 
 2. Argos shows the information in .pdf format, the information was copied to .txt.  
 3. A custom Python loop was created for each clinical data modality (example for blod tests included in folder). It iterated through patients and extracted the relevant data to .csv format.
-4. Data in .csv format was handed over to Padris for annonymization, codification and association with images. 
+4. Data in .csv format was handed over to PADRIS for annonymization, codification and association with images. 
 
 
 ## Cohort creation
 ### Case and Control definition
-In order to create our cohort, we asked PADRIS chest images and some metadata from patients that had been PCR positive for COVID, as well as extra data from patients that don't have COVID.
-Even though the date that our patients were tested COVID positive, most of our RX images weren't done the same day of the PCR test. Based in Belén Del Río's team experience, as well what could find in previous papers, we decided to consider COVID positive to the RX images that met the following two criterias:
+In order to create our cohort, we asked PADRIS chest images and some metadata from patients that had been PCR positive for COVID, as well as extra data from patients that have never had COVID.
+As expected, most of our RX images weren't done the same day of the PCR test. Based on our research, we decided to consider COVID positive the RX images that met the following two criterias:
 * RX image done at least 2 days before the positive PCR
 * RX image done at most 14 days after the positive PCR
 
@@ -37,10 +37,10 @@ Moreover, our Control cases would have to meet at least one of the following cri
 * RX image done before year 2020
 
 ### Experiment Replication
-One of the main components of the scientific method is the ability to replicate the experiments. Even though the dataset we're using is not public, we wanted to make sure we could reproduce our experiments. To do so, we randomized and splitted our train, validation and test datasets, so that in future experiments we don't use trained images in validation/test steps. Moreover, we've set a fixed seed number, so all randomized functions can be reproducible.
+One of the main components of the scientific method is the ability to repeat the experiments. Even though the dataset we're using is not public, we wanted to make sure we could reproduce our experiments. To do so, we randomized and splitted our train, validation and test datasets, so that in future experiments we don't use trained images in validation/test steps. Moreover, we set a fixed seed number, so all randomized functions are repeatable.
 
 ### Balancing dataset distribution
-We looked at the distribution of the COVID results across "sex" and "age" variables, in order to make sure the network wasn't inferring when taking its decision. The "sex" variable was very balanced, while "age" was a bit higher for COVID positive, but not enough to affect our result.
+We looked at the distribution of the COVID results across "sex" and "age" variables, in order to make sure the network wasn't inferring them when taking its decision. The "sex" variable was very balanced, while "age" was a bit higher for COVID positive, but not enough to affect our result.
 
 ### Dataset bias avoiding
 Even though we had a balanced dataset across "sex" and "age" variables, we've put special effort in making sure that the network is learning what we want, and that it's not using "tricks" that help it to get better results. We detected several cases where the network could have an undesired advantage:
