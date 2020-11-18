@@ -66,7 +66,7 @@ Model: GoogLeNet; Training epochs: 23; Batch size: 40; Results:
 
 The main difference between these two graphs is the noise in the loss of the validation set. This may be due to differences in the batch size and also in the optimizer, as the network in the graph above has been trained with Adam while the one below has been trained with SGD.
 
-All the results of this section (and also some not included) are in the [Experiments](/Experiments/) folder.
+All the results of this section (and also some not included) are in the [Experiments](https://github.com/FastCovNetProject/FastCovNetProject/tree/main/COVID%20Classification/ChestCovNet/Experiments) folder.
 
 --------------------------------------
 
