@@ -41,7 +41,7 @@ Following protocol approval a petition was sent to Padris Program for imaging da
 *Gold Dataset*
 
 Following protocol approval we began a retrospective data collection from the Bellvitge COVID19 'Fast Diagnosis Circuit'. 
-Gold dataset included 1000 individuals with following data:
+Gold dataset included 1078 individuals with following data:
 - PCR
 - Chest Xray report
 - Age and sex
